@@ -54,6 +54,20 @@ export function Footer() {
                 </a>
               </p>
             </div>
+
+            <div>
+              <p className="text-xs font-medium uppercase tracking-wider text-ink-faint">{t.footer.legal}</p>
+              <ul className="mt-4 space-y-2">
+                <li>
+                  <a
+                    href="/wormway/privacy"
+                    className="text-sm text-ink-muted transition-colors hover:text-ink"
+                  >
+                    {t.footer.wormwayPrivacy}
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 

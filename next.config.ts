@@ -13,6 +13,11 @@ const useTempDist =
 const nextConfig: NextConfig = {
   ...(useTempDist ? { distDir: path.join(os.tmpdir(), "bosphox-next-dev") } : {}),
   devIndicators: false,
+  async rewrites() {
+    return [
+      { source: "/wormway/privacy", destination: "/wormway/privacy.html" },
+    ];
+  },
 };
 
 export default nextConfig;
