@@ -31,7 +31,7 @@ function getInitialTheme(): Theme {
   const stored = window.localStorage.getItem(THEME_STORAGE_KEY) as Theme | null;
   if (stored === "dark" || stored === "light") return stored;
   if (document.documentElement.classList.contains("dark")) return "dark";
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  return "light";
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {

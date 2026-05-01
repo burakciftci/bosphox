@@ -13,7 +13,7 @@ const montserrat = Montserrat({
   weight: ["400", "500", "600", "700"],
 });
 
-const themeInitScript = `(function(){try{var k='bosphox-theme';var s=localStorage.getItem(k);if(s==='dark'){document.documentElement.classList.add('dark');return;}if(s==='light'){document.documentElement.classList.remove('dark');return;}if(window.matchMedia('(prefers-color-scheme: dark)').matches)document.documentElement.classList.add('dark');}catch(e){}})();`;
+const themeInitScript = `(function(){try{var k='bosphox-theme';var s=localStorage.getItem(k);if(s==='dark'){document.documentElement.classList.add('dark');return;}document.documentElement.classList.remove('dark');}catch(e){}})();`;
 
 export const metadata: Metadata = {
   title: "BosphoX — Product studio for web & mobile",
