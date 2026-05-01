@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --ink-rgb: 15 23 42;
+  --ink-muted-rgb: 71 85 105;
+  --ink-faint-rgb: 100 116 139;
+}
+
+.dark {
+  color-scheme: dark;
+  --ink-rgb: 226 232 240;
+  --ink-muted-rgb: 148 163 184;
+  --ink-faint-rgb: 120 133 153;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #ffffff;
+}
+
+.dark html {
+  background-color: #070b14;
+}
+
+body {
+  @apply min-h-screen antialiased;
+  color: rgb(var(--ink-rgb));
+  /* Açık tema: gökyüzü / cyan geçişi */
+  background-color: #f0f9ff;
+  background-image:
+    radial-gradient(ellipse 90% 72% at 10% -6%, rgba(15, 23, 42, 0.14), transparent 52%),
+    radial-gradient(ellipse 88% 68% at 16% 4%, rgba(34, 211, 238, 0.42), transparent 58%),
+    radial-gradient(ellipse 60% 48% at 94% 8%, rgba(37, 99, 235, 0.16), transparent 50%),
+    linear-gradient(
+      168deg,
+      #f8fafc 0%,
+      #e0f2fe 7%,
+      #bae6fd 15%,
+      #7dd3fc 24%,
+      #38bdf8 33%,
+      #0ea5e9 42%,
+      #22d3ee 50%,
+      #67e8f9 58%,
+      #a5f3fc 70%,
+      #ecfeff 84%,
+      #ffffff 100%
+    );
+  background-attachment: fixed;
+}
+
+.dark body {
+  background-color: #070b14;
+  background-image:
+    radial-gradient(ellipse 85% 60% at 8% -4%, rgba(34, 211, 238, 0.12), transparent 52%),
+    radial-gradient(ellipse 70% 55% at 92% 6%, rgba(14, 165, 233, 0.1), transparent 48%),
+    linear-gradient(168deg, #070b14 0%, #0c1526 35%, #0f172a 65%, #0a1628 100%);
+  background-attachment: fixed;
+}
+
+::selection {
+  @apply bg-sky-200/90 text-sky-950;
+}
+
+.dark ::selection {
+  @apply bg-cyan-500/35 text-slate-50;
+}
+
+@layer components {
+  /** Bölüm üst etiketi */
+  .section-kicker {
+    @apply text-[13px] sm:text-sm font-bold uppercase tracking-[0.11em] text-cyan-950 antialiased;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.65);
+  }
+
+  .dark .section-kicker {
+    @apply text-cyan-200/95;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
